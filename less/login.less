@@ -1,0 +1,173 @@
+/* ===== Screen-specific Styles ========================================================
+   Author: Massv Inc.
+   ========================================================================== */
+
+/* LOGIN SCREEN STYLES */
+.screen.login{
+    // Width-independent styles:
+    .content{
+        background-color: transparent;  // Turn this on when styling this section is complete.
+        .login{
+            width: 50%;
+            min-width: 280px;
+            max-width: 620px;
+            padding: 30px;
+            margin: 0 auto;
+            background: @SixtyPercentBlack url(../images/portal/background-portal-icon.png) no-repeat right top;
+        }
+        h1, h2{
+            line-height:100%;
+            margin: auto;
+            text-align: center;
+        }
+        .h1{
+            color: #3890c0;
+        }
+        .h2{
+            color: #f05926;
+            padding-top: 10px;
+        }
+        .h3{
+            color: white;
+            padding-bottom: 10px;
+        }
+        form{
+            padding: 30px 10px;
+            input{
+                font-family:"Open Sans";
+                font-size:20px;
+                display: block;
+                background-color: black;
+                color: white;
+                padding: 10px;
+                width:100%;
+                margin: auto;
+                margin-bottom: 10px;
+            }
+            a.forgot{
+              display: block;
+              float: left;
+              font-size: 12px;
+              background-color: transparent;
+            }
+            a.button{
+                font-size:20px;
+                display: block;
+                float: right;
+                width:30%;
+                margin: 10px 0px;
+                color: #3890c0;
+            }
+        }
+    }
+
+    // Responsive styles:
+    // Portrait phone (yellow mode)
+    @media (max-width: 479px){
+        .login{
+            min-width: 280px;
+        }
+        .headline{
+            .h1{
+                font-size: 14px;
+            }
+        }
+    }
+
+    // Landscape phone (red mode)
+    @media (min-width: 480px){
+        .login{
+            min-width: 280px;
+        }
+        .headline{
+            .h1{
+                font-size:22px;
+            }
+        }
+    }
+
+    // Portrait tablet to landscape tablet/small desktop (green mode)
+    @media (min-width: 768px){
+        .headline{
+            .h1{
+                font-size:70px;
+            }
+            .h2{
+              font-size:25px;
+            }
+            .h3{
+              font-size:25px;
+            }
+        }
+        a{
+
+        }
+        a.button{
+
+        }
+    }
+
+    // Default desktop (purple mode)
+    /*@media (min-width: 980px){
+        .headline{
+            .h1{
+                font-size:110px;
+            }
+            .h2{
+              font-size:35px;
+            }
+            .h3{
+              font-size:35px;
+            }
+        }
+        a{
+
+        }
+        a.button{
+            
+        }
+    }*/
+
+    // Large desktop (blue mode)
+    @media (min-width: 1200px){
+        .headline{
+            .h1{
+                font-size:110px;
+            }
+            .h2{
+              font-size:35px;
+            }
+            .h3{
+              font-size:35px;
+            }
+        }
+        a{
+
+        }
+        a.button{
+            
+        }
+    }
+
+    // Huge desktop (grey mode)
+    // E.g. on 1080p HDTVs
+    @media (min-width: 1900px){
+        .headline{
+            .h1{
+                font-size:140px;
+            }
+            .h2{
+              font-size:35px;
+            }
+            .h3{
+              font-size:35px;
+            }
+        }
+        a{
+
+        }
+        a.button{
+            
+        }
+    }
+}

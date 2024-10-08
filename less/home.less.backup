@@ -1,0 +1,226 @@
+/* ===== Screen-specific Styles ========================================================
+   Author: Massv Inc.
+   ========================================================================== */
+
+/* HOME SCREEN STYLES */
+.screen.home{
+	.illustrations {
+	}
+    .content{
+        background-color: transparent;  // Turn this on when styling this section is complete.
+        .headline{
+            //width:67%;
+			width:81%;
+            text-align: right;
+	    margin-top: 8%;
+	    margin-left: -7%;
+            .flash{
+                padding-top: 10px;
+                padding-bottom: 7px;
+                float: right;
+            }
+            .main{
+                float: right;
+                clear: both;
+                padding-bottom: 10px;
+                color: #b5fb00;
+            }
+        }
+        p{
+            width:67%;
+            text-align: right;
+            top: 220px; 
+            line-height:115%;
+            strong{
+                display: block;
+            }
+        }
+    }
+    .consumerexperiencebug {
+       position: absolute;
+       //background-image: url(../images/home/home_consumerexperience_bug.png);
+       background-image: url(../images/home/home_bubble_sprites.png);
+       background-position: -518px -222px;
+       width: 259px;
+       height: 222px;
+       z-index: 951;
+       .Clickable();
+       &.hover {
+		//background-image: url(../images/home/home_consumerexperience_bugrollover.png);
+		background-position: -518px 0px;
+	    }
+    }
+    .socialplatformsbug {
+        position: absolute;
+	//background-image: url(../images/home/home_socialplatforms_bug.png);
+	background-image: url(../images/home/home_bubble_sprites.png);
+	background-position: -259px -222px;
+	width: 259px;
+	height: 222px;
+        z-index: 951;
+	.Clickable();
+	&.hover {
+	        //background-image: url(../images/home/home_socialplatforms_bugrollover.png);
+		background-position: 0px -222px;
+	    }
+    }
+    .supplychainbug {
+        position: absolute;
+	//background-image: url(../images/home/home_supplychain_bug.png);
+	background-image: url(../images/home/home_bubble_sprites.png);
+	background-position: -259px 0px;
+	width: 259px;
+	height: 222px;
+        z-index: 951;
+	.Clickable();
+	&.hover {
+		//background-image: url(../images/home/home_supplychain_bugrollover.png);
+		background-position: 0px 0px;
+	    }
+    }
+}
+
+.screen.home.loading {
+
+	.content {
+		position: absolute;
+		left: 20%;
+		top: 20%;
+	}
+}
+
+.modal {
+      .video-js {
+              position: relative;
+      }
+}
+
+/* HOME SCREEN CONTENT IE7/8 CROSS-BROWSER FIXES */
+.lt-ie9 {
+    .screen.home{
+        .content{
+            p{
+                position: absolute;
+                bottom: 40%;
+            }
+            .videotrigger{
+                bottom: 5%;
+            }
+        }
+    }
+    .modal {
+        background-color: #000;
+    }
+}
+
+/* HOME SCREEN CONTENT IE7 CROSS-BROWSER FIXES */
+.lt-ie8 .screen.home{
+    .content{
+        p{
+            bottom: auto;
+        }
+    }
+}
+
+// Resposive resolutions:
+// Portrait phone (yellow mode)
+@media (max-width: 479px){
+    .screen.home .content{
+        .headline{
+            .flash{
+                font-size: 14px;
+            }
+            .main{
+                font-size: 35px;
+            }
+        }
+        p{
+            font-size: 15px;
+            bottom: auto;
+        }
+        .videotrigger{
+            margin-top:-40px;
+            .Resize(0.65);
+        }
+    }
+}
+
+// Landscape phone (red mode)
+@media (min-width: 480px){
+    .screen.home .content{
+        .headline{
+            .flash{
+                font-size:22px;
+            }
+            .main{
+                font-size:50px;
+            }
+        }
+
+        p{
+            font-size:15px;
+        }
+        .videotrigger{
+            .Resize(0.75);
+        }
+    }
+}
+
+// Portrait tablet to landscape tablet/small desktop (green mode)
+@media (min-width: 768px){
+    .screen.home .content{
+        .headline{
+            width:85%;
+            .flash{
+                font-size:30px;
+            }
+            .main{
+                font-size:60px;
+            }
+        }
+
+        p{
+            font-size:23px;
+        }
+        .videotrigger{
+            .Resize(1.0);
+        }
+    }
+}
+
+// Large desktop (blue mode)
+@media (min-width: 1200px){
+    .screen.home .content{
+        .headline{
+            width:81%;
+            .flash{
+                font-size:44px;
+            }
+            .main{
+                font-size:70px;
+            }
+        }
+    }
+}
+
+// Huge desktop (grey mode)
+// E.g. on 1080p HDTVs
+@media (min-width: 1900px){
+    .screen.home .content{
+        .headline{
+            margin-top:-30px;
+            .flash{
+                font-size:68px;
+            }
+            .main{
+                font-size:96px;
+            }
+        }
+
+        p{
+            font-size:32px;
+            // line-height:100%;
+            margin-top:-5px;
+        }
+    }
+}

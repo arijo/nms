@@ -1,0 +1,205 @@
+
+              nav>ul>li{ // Handling first-level lis only
+                      background: url(../images/icons.png) no-repeat 0 0px;
+                      padding: 1px 0px 0px 35px;
+                      .SeventyPercentOpacity;
+                      .Transition;
+                      white-space: nowrap;
+                      &:hover{
+                              //.SeventyPercentOpacity;
+                              .FullOpacity;
+                              &>a{
+                                      //.SeventyPercentOpacity;
+                                      .FullOpacity;
+                                      &:hover{
+                                              .FullOpacity;
+                                      }
+                              }
+                      }
+
+                      &.current{
+                              .FullOpacity;
+                              cursor: default;
+
+                  a:hover {
+                          cursor: pointer;
+                  }
+                      }
+
+                      // Icons for major navigation sections:
+                      &.home{
+                              background: url(../images/icons.png) no-repeat 0 0px;
+                              &.current, &.highlight {
+                                      //background: url(../images/icons.png) no-repeat 0 0px;
+                              }
+                      }
+                      &.medialifecycle{
+                              background: url(../images/icons.png) no-repeat 0 -56px;
+                              &.current, &.highlight {
+                                      //background: url(../images/icons.png) no-repeat 0 -84px;
+                              }
+                      }
+                      &.seeusinaction{
+                              background: url(../images/icons.png) no-repeat 0 -112px;
+                              &.current, &.highlight {
+                                      //background: url(../images/icons.png) no-repeat 0 -140px;
+                              }
+                      }
+                      &.aboutus{
+                              background: url(../images/icons.png) no-repeat 0 -168px;
+                              &.current, &.highlight {
+                                      //background: url(../images/icons.png) no-repeat 0 -196px;
+                              }
+                      }
+                      &.login{
+                              background: url(../images/icons.png) no-repeat 0 -224px;
+                              &.current, &.highlight {
+                                      //background: url(../images/icons.png) no-repeat 0 -252px;
+                              }
+                      }
+              }
+
+              nav{
+                      position: absolute;
+                      top:24px;
+                      left:50px;
+                      text-transform: uppercase;
+                      font-size:18px;
+                      width:100%;
+              
+                      a, a:link, a:visited{
+                              background: none;
+                              float: left;
+                              font-weight: 300;
+                              color: white;
+                              .NoTextEmboss;
+                              overflow: hidden;
+                              display: inline-block;
+                              height: 28px;
+                              padding:3px 0 0 0;
+                              margin:0;
+                              margin-right: 15px;
+
+                              &:hover, &:active{
+                                      text-decoration: none;
+                                      color:white;
+                                      background:none;
+                                      .NoTextEmboss;
+                              }
+
+                              
+                      }
+                      ul{
+                              float: left;
+                              padding: 0;
+                              margin: 0;
+                              li{
+                                      position: relative;
+                                      display: inline-block;
+                                      overflow: hidden;
+                                      text-overflow:clip;
+                                      cursor: pointer;
+                                      
+                                      &.current a, &.current a:link, &.current a:visited{
+                                              cursor: default;
+                                              color: white;
+                                              .FullOpacity;
+                                              
+                                              &:hover, &:active{
+                                                      .FullOpacity;
+                                                      color: white;
+                              cursor: pointer;
+                                              }
+                                      }
+
+                                      &.highlight>a {
+                                              .FullOpacity;	
+                                              color: white !important;
+                                      }
+
+                                      a{					
+                                              &:active{
+                                                      color: white;
+                                              }
+                                      }
+
+                                      ul{
+                                              float: left;
+                                              clear: both;
+                                              position: absolute;
+                                              top:1.5em;
+
+                                              li{
+                                                      display: block;
+                                                      padding: 0;
+                                                      margin: 0;	
+                                                      a{
+                                                              .HalfOpacity;
+                                                              &:hover{
+                                                                      .FullOpacity;
+                                                              }
+                                                      }
+                                              }
+                                      }
+
+                                      ul.dropdown {
+                                              position: absolute;
+                                              left: 0;
+                                              top: 1.5em;
+                                              width: auto;
+
+                                              li {
+                                                      width: auto;
+                                                      padding-left: 35px;
+
+                                                      a {
+                                                              .HalfOpacity;	
+                                                              color: white !important;
+                                                      }
+                                                      a:hover {
+                                                              .FullOpacity;
+                                                              cursor: pointer;
+                                                      }
+                                                      &.highlight>a {
+                                                              .FullOpacity;	
+                                                              color: white !important;
+                                                      }
+                                              }
+                                      }
+                              }
+                      }
+              }
+      }
+
+      /* IE7 NAVIGATION-MENU CROSS-BROWSER FIXES */
+      .lt-ie8 header nav>ul {
+
+              &>li {
+
+                      float: left;
+
+                      display: inline;
+                      zoom: 1;
+
+                      &.home,
+                      &.medialifecycle,
+                      &.seeusinaction,
+                      &.aboutus,
+                      &.login,
+                      &:hover, &.current {
+                              height: 28px;
+                      }
+
+                      ul.dropdown {
+
+                              li {
+                                      overflow: visible;
+
+                                      a {
+                                              overflow: visible;
+                                      }
+
+                              }
+                      }
+              }
+      }

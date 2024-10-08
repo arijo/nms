@@ -1,0 +1,15 @@
+Paths to change:
+	
+	/.htaccess
+		last line
+		
+	/index.html
+		all linked stylesheets and .js, etc.
+		
+	/bootstrap/main.js
+
+	/pages/medialifecycle/popups/popup.html
+	/pages/seeusinaction/popups/popup.html
+	
+	/shared/nms/screen/illustrations.js
+		/images -> images (13 places)

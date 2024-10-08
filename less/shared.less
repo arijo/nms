@@ -1,0 +1,187 @@
+/* ===== Primary Styles ========================================================
+   Author: Massv Inc.
+============================================================================= */
+
+@import url('http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700');
+@import url('http://fonts.googleapis.com/css?family=Chivo:400,400italic,900,900italic');
+
+/* Default colors, corners, and shadows */
+@NinetyPercentBlack:       rgba(0,0,0,0.9);
+@EightyPercentBlack:       rgba(0,0,0,0.8);
+@SeventyPercentBlack:      rgba(0,0,0,0.7);
+@SixtyPercentBlack:        rgba(0,0,0,0.6);
+@FiftyPercentBlack:        rgba(0,0,0,0.5);
+@FortyPercentBlack:        rgba(0,0,0,0.4);
+@ThirtyPercentBlack:       rgba(0,0,0,0.3);
+@TwentyPercentBlack:       rgba(0,0,0,0.2);
+@TenPercentBlack:          rgba(0,0,0,0.1);
+
+@FivePercentWhite:         rgba(255,255,255,0.05);
+@TenPercentWhite:          rgba(255,255,255,0.1);
+@TwentyPercentWhite:       rgba(255,255,255,0.2);
+
+@textColor:                white;
+@textSelectionColor:       black;
+@textSelectionBackground:  grey;
+@navBlack:                 @SixtyPercentBlack;
+@panelBlack:               @ThirtyPercentBlack;
+
+@defaultRadius:            8px;
+@defaultDuration:          0.2s;
+@defaultScale:             0.75;
+
+.RoundCorners(@radius:@defaultRadius){
+    -webkit-border-radius:@radius;
+    -moz-border-radius:@radius;
+	border-radius:@radius;
+}
+
+.TextShadow(@color:@FortyPercentBlack){
+	text-shadow: 0px 1px 3px @color;
+	filter: ~"dropshadow(color=#888888, offx=0, offy=1)";
+}
+
+.TextEmboss(@color:@ThirtyPercentBlack){
+	text-shadow: 0px -1px 1px @color;
+	filter: ~"dropshadow(color=#888888, offx=0, offy=-1)";
+}
+
+.NoTextEmboss(){
+	text-shadow: none;
+	filter: ~"dropshadow(enabled=false)";
+}
+
+.Transition(@duration:@defaultDuration){
+	transition: all @duration ease-out;
+	-moz-transition: all @duration ease-out; /* Firefox 4 */
+	-webkit-transition: all @duration ease-out; /* Safari and Chrome */
+	-o-transition: all @duration ease-out; /* Opera */
+}
+
+.PanelShadow(){
+	-webkit-box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:    0px 2px 15px rgba(0, 0, 0, 0.5);
+	box-shadow:         0px 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.Resize(@size:@defaultScale){
+    zoom: @size;
+    -moz-transform: scale(@size);
+    -webkit-transform: scale(@size);
+}
+
+.NoOpacity(){
+	-moz-opacity: 0;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter:alpha(opacity=0);
+	opacity: 0;
+}
+
+.TenPercentOpacity(){
+	-moz-opacity: 0.1;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+	filter:alpha(opacity=10);
+	opacity: 0.1;
+}
+
+.TwentyPercentOpacity(){
+	-moz-opacity: 0.2;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+	filter:alpha(opacity=20);
+	opacity: 0.2;
+}
+
+.ThirtyPercentOpacity(){
+	-moz-opacity: 0.3;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter:alpha(opacity=30);
+	opacity: 0.3;
+}
+
+.HalfOpacity(){
+	-moz-opacity: 0.5;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter:alpha(opacity=50);
+	opacity: 0.5;
+}
+
+.SeventyPercentOpacity(){
+	-moz-opacity: 0.7;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+	filter:alpha(opacity=70);
+	opacity: 0.7;
+}
+
+.EightyPercentOpacity(){
+	-moz-opacity: 0.8;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter:alpha(opacity=80);
+	opacity: 0.8;
+}
+
+.FullOpacity(){
+	-moz-opacity: 1;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter:alpha(opacity=100);
+	opacity: 1;
+}
+
+.Clickable(){
+	cursor: pointer;
+}
+
+/* General Items */
+*{
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+html, body {
+	width:100%;
+	height:100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+body{
+	font-size: 1em;
+	line-height: 1.2;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color: @textColor;
+	background:#333;
+}
+
+a, a:link, a:visited {
+	color: @textColor - #111;
+	background:@ThirtyPercentBlack;
+	text-decoration: none;
+	padding: 3px;
+	margin: -3px;
+	.RoundCorners(3px);
+	.Transition;
+
+	&:hover {
+		color: @textColor;
+		text-decoration: none;
+		background:@SixtyPercentBlack;
+		.TextEmboss(@SixtyPercentBlack);
+	}
+	&:focus { outline: thin dotted; }
+	&:hover, &:active { outline: 0; }
+}
+
+::-moz-selection{ 
+    background: @textSelectionBackground;
+    color: @textSelectionColor;
+    text-shadow: none;
+}
+
+::selection{
+    background: @textSelectionBackground; 
+    color: @textSelectionColor; 
+    text-shadow: none;
+}

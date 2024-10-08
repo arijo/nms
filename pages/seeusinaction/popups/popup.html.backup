@@ -1,0 +1,49 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Sony DADC New Media Solutions</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no" >
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<link rel="stylesheet/less" href="/less/popups.less">
+	<!--link rel="stylesheet" href="/less/popups.css"-->
+	
+	<!--
+	<link rel="stylesheet" type="text/css" href="/css/retina.css" media="only screen and (-webkit-min-device-pixel-ratio: 2)" />
+	-->
+
+	<script src="/libs/less/less-1.3.0.min.js"></script>
+
+	<!-- Use SimpLESS (Win/Linux/Mac) or LESS.app (Mac) to compile your .less files
+	to style.css, and replace the 2 lines above by this one:
+
+	<link rel="stylesheet/less" href="less/style.css">
+	 -->
+	<!--[if gte IE 9]><style type="text/css">
+	    .gradient {
+	       filter: none;
+	    }</style>
+	<![endif]-->
+	<!--[if lt IE 9]>
+		<script src="libs/modernizr/modernizr.js"></script>
+	<![endif]-->
+
+	<!-- Erase thte following line after development -->
+	<!--link rel="stylesheet" href="/less/temp-overrides.css"-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<div class="popup seeusinaction"><img src="../../../images/seeusinaction/brands.png" /></div>
+
+</body>
+</html>

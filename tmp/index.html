@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+	<title>Transitoins Test</title>
+	
+	<style type="text/css" media="screen">
+		#grid {
+			position: absolute;
+			background-color: #33d;
+			width: 300px;
+			height: 230px;
+			-webkit-transition-property: left, top;
+			-webkit-transition-duration: 1.4s, 1.4s;
+			-webkit-transition-timing-function: linear;
+		}		
+	</style>
+		
+</head>
+<body>
+	<div class="buttons">
+		<button class="up">UP</button>
+		<button class="right">RIGHT</button>
+		<button class="down">DOWN</button>
+		<button class="left">LEFT</button>
+	</div>
+	<div id="grid"></div>
+	<script type="text/javascript" charset="utf-8" src="jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="index.js"></script>
+</body>
+

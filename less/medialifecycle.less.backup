@@ -1,0 +1,768 @@
+/* ===== Screen-specific Styles ========================================================
+   Author: Massv Inc.
+   ========================================================================== */
+
+/* MEDIA LIFE CYCLE SCREEN STYLES */
+.screen.medialifecycle{
+    // Width-independent styles:
+    .content {
+        background-color: transparent;  // Turn this on when styling this section is complete.
+        .headline {
+				margin-top: 3%;
+            .flash {
+                color: #fa67d1;
+                padding-top: 10px;
+            }
+            .main {
+                color: white;
+                padding-bottom: 10px;
+            }
+        }
+        p{
+            line-height:120%;
+            strong{
+                display: block;
+            }
+        }
+        ul{
+            text-align:left;
+            padding-right: 20%;
+            line-height: 120%;
+            bottom:0;
+            color: black;
+            .SeventyPercentOpacity();
+        }
+        .listtrigger{
+			position: absolute;
+			text-align: center;
+			z-index: 950;
+			.Clickable();
+			//background-image: url(../images/medialifecycle/medialifecycle_thelist_landing.png);
+			background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+			background-position: -265px -460px;
+			&.hover{
+				//background-image: url(../images/medialifecycle/medialifecycle_thelist_landing_rollover.png);
+				background-position: 0px -460px;
+			}
+			width: 265px;
+			height: 220px;
+        }
+    }
+
+    // Resposive styles:
+    // Portrait phone (yellow mode)
+    @media (max-width: 479px){    
+        .headline{
+            .flash{
+                font-size: 14px;
+            }
+            .main{
+                font-size: 35px;
+            }
+        }
+        ul{
+            bottom: auto;
+        }
+        .listtrigger{
+            margin-top:-40px;
+            .Resize(0.65);
+        }
+    }
+
+    // Landscape phone (red mode)
+    @media (min-width: 480px){
+        .headline{
+            .flash{
+                font-size:22px;
+            }
+            .main{
+                font-size:50px;
+            }
+        }
+        .listtrigger{
+            .Resize(0.75);
+        }
+    }
+
+    // Portrait tablet to landscape tablet/small desktop (green mode)
+    @media (min-width: 768px){
+        .headline{
+            .flash{
+                font-size:56px;
+            }
+            .main{
+                font-size:40px;
+            }
+        }
+        .listtrigger{
+            .Resize(1.0);
+        }
+    }
+
+    // Large desktop (blue mode)
+    @media (min-width: 1200px){
+        .headline{
+            margin-top:-20px;
+            .flash{
+                font-size:68px;
+            }
+            .main{
+                font-size:52px;
+            }
+        }
+
+        ul{
+            margin-top:10px;
+            margin-bottom: -20px;
+        }
+    }
+
+    // Huge desktop (grey mode)
+    // E.g. on 1080p HDTVs
+    @media (min-width: 1900px){
+        .headline{
+            margin-top:-30px;
+            .flash{
+                font-size:96px;
+            }
+            .main{
+                font-size:60px;
+            }
+        }
+
+        ul{
+            margin-top:15px;
+            margin-bottom: -30px;
+        }
+    }
+}
+
+
+/* CONTENT CREATION SCREEN STYLES */
+.screen.contentcreation{
+    // Width-independent styles:
+    .content{
+        background-color: transparent; //Uncomment this when styling this section is complete.
+        .headline {
+			margin-top: 5%;
+            .flash {
+                &.h1 {
+                    color: #e873fa;
+                }
+                &.h2 {
+                    padding-top: 10px;
+                    color: white;
+                }
+                &.h3 {
+                    padding-bottom: 10px;
+                    color: white;
+                }
+            }
+        }
+        .listtrigger{
+			position: absolute;
+			text-align: center;
+			z-index: 951;
+			//background-image: url(../images/medialifecycle/medialifecycle_thelist_contentcreation.png);
+			background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+			background-position: -838px 0px; 
+			&.hover{
+        	       		 //background-image: url(../images/medialifecycle/medialifecycle_thelist_contentcreation_rollover.png);
+				background-position: -530px -460px; 
+            		}
+			width: 252px;
+			height: 218px;
+            .Clickable();
+        }
+    }
+    ul.bubbles{
+        li{
+            background-color: transparent;
+        }
+        li.text{
+            color: transparent;
+            font-size: 1px;
+        }
+        .bug-bubble {
+            width: 284px;
+            height: 240px;
+	    z-index: 951;
+            //background-image: url(../images/medialifecycle/contentcreationbug.png);
+	    background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+	    background-position: -284px 0;
+            .Clickable();
+            &.hover{
+                background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+	    	background-position: 0px 0px;
+            }
+        }
+        .bubble-bubble {
+            width: 250px;
+            height: 250px;
+            //background-image: url(../images/medialifecycle/contentcreation_contentbubble01.png);
+	    background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+	    background-position: -838px -218px;
+        }
+        .thelist-bubble {
+            width: 252px;
+            height:214px;
+            //background-image: url(../images/medialifecycle/medialifecycle_thelist_contentcreation.png);
+	    background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+	    background-position: -838px 0px;
+        }
+        .threedee-bubble{ 
+            //background-image: url(../images/medialifecycle/bulletbubble_3d.png);
+            width:130px;
+            height:130px;
+	    background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+	    background-position: -426px -880px;
+        }
+        .socialmedia-bubble{
+            //background-image: url(../images/medialifecycle/bulletbubble_socialmedia.png);
+            width:160px;
+            height:160px;
+	    background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+	    background-position: -559px -680px;
+        }
+        .music-bubble{
+            //background-image: url(../images/medialifecycle/bulletbubble_music.png);
+            width:140px;
+            height:140px;
+	    background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+	    background-position: -286px -880px;
+        }
+    }
+
+    // Resposive styles:
+    // Portrait phone (yellow mode)
+    @media (max-width: 479px){    
+        .headline{
+            .flash{
+                font-size: 14px;
+            }
+            .main{
+                font-size: 35px;
+            }
+        }
+        /*.listtrigger{
+            margin-top:-40px;
+            .Resize(0.65);
+        }*/
+    }
+
+    // Landscape phone (red mode)
+    @media (min-width: 480px){
+        .headline{
+            .flash{
+                font-size:22px;
+            }
+            .main{
+                font-size:50px;
+            }
+        }
+        /*.listtrigger{
+            .Resize(0.75);
+        }*/
+    }
+
+    // Portrait tablet to landscape tablet/small desktop (green mode)
+    @media (min-width: 768px){
+        .headline{
+            .h1{
+                font-size:56px;
+            }
+            .h2{
+                font-size:30px;
+            }
+            .h3{
+                font-size:20px;
+            }
+        }
+        /*.listtrigger{
+            .Resize(1.0);
+        }*/
+    }
+
+    // Large desktop (blue mode)
+    @media (min-width: 1200px){
+        .headline{
+            margin-top:-20px;
+            .h1{
+                font-size:54px;
+            }
+            .h2{
+                font-size:30px;
+            }
+            .h3{
+                font-size:23px
+            }
+        }
+    }
+
+    // Huge desktop (grey mode)
+    // E.g. on 1080p HDTVs
+    @media (min-width: 1900px){
+        .headline{
+            margin-top:-20px;
+            .h1{
+                font-size:77px;
+            }
+            .h2{
+                font-size:38px;
+            }
+            .h3{
+                font-size:32px
+            }
+        }
+    }
+}
+
+/* CONTENTCREATION - ADJUST BUBBLE IMAGES SIZE IN IE7 */
+.lt-ie8 {
+    .screen.contentcreation {
+			ul.bubbles{
+				.bug-bubble {
+					width: 264px;
+					height: 220px;
+				}
+				.bubble-bubble {
+					width: 230px;
+					height: 220px;
+				}
+				.thelist-bubble {
+					width: 252px;
+					height:214px;
+				}
+				.threedee-bubble{ 
+					width:110px;
+					height:110px;
+				}
+				.socialmedia-bubble{
+					width:140px;
+					height:140px;
+				}
+				.music-bubble{
+					width:140px;
+					height:140px;
+				}
+			}
+	}
+}
+
+
+/* NEW MEDIA SUPPLY CHAIN SCREEN STYLES */
+.screen.supplychainsolutions{
+    // Width-independent styles:
+    .content{
+        background-color: transparent;  // Turn this on when styling this section is complete.
+        .headline{
+			margin-top: 7%;
+            .flash{
+                color: white;
+                &.h1{
+                    color: #4de0cf;
+                }
+                &.h2{
+                    padding-top: 10px;
+                }
+                &.h3{
+                    padding-bottom: 10px;
+                }
+                .special{
+                }
+            }
+        }
+        p{
+			float: left;
+            //color: #146c73;
+        }
+        .listtrigger{
+	    position: absolute;
+	    text-align: center;
+	    z-index: 951;	
+	    //background-image: url(../images/medialifecycle/medialifecycle_thelist_supplychainsolutions.png);
+	    background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+	    background-position: -270px -240px;
+      	    .Clickable();
+            &.hover{
+                //background-image: url(../images/medialifecycle/medialifecycle_thelist_supplychainsolutions_rollover.png);
+	        background-position: 0px -240px;
+            }
+			width: 270px;
+			height: 220px;
+        }
+    }
+    ul.bubbles{
+        li{
+            background-color: transparent;
+        }
+        li.text{
+            color: transparent;
+            font-size: 1px;
+        }
+        .thelist-bubble {
+            width: 265px;
+            height:210px;
+            //background-image: url(../images/medialifecycle/medialifecycle_thelist_supplychainsolutions.png);
+	    background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+	    background-position: -270px -240px;
+        }
+        .distribpoints-bubble {
+            width: 145px;
+            height: 145px;
+            //background-image: url(../images/medialifecycle/bulletbubble_distribution.png);
+	    background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+	    background-position: 0px -880px;
+        }
+        .territories-bubble {
+            width: 145px;
+            height: 145px;
+            //background-image: url(../images/medialifecycle/bulletbubble_territories.png);
+	    background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+	    background-position: -872px -680px;
+	    z-index: 905;
+        }
+        .files-bubble {
+            width: 178px;
+            height:178px;
+            //background-image: url(../images/medialifecycle/bulletbubble_files.png);
+	    background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+	    background-position: -381px -680px;
+			z-index: 904;
+        }
+        .transcodes-bubble{ 
+            //background-image: url(../images/medialifecycle/bulletbubble_transcodes.png);
+	    background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+	    background-position: -145px -880px;
+            width:141px;
+            height:141px;
+			z-index: 905;
+        }
+        .assets-bubble{
+            //background-image: url(../images/medialifecycle/bulletbubble_assets.png);
+	    background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+	    background-position: -719px -680px;
+            width:153px;
+            height:153px;
+			z-index: 904;
+        }
+    }
+
+    // Resposive styles:
+    // Portrait phone (yellow mode)
+    @media (max-width: 479px){    
+        .headline{
+            .flash{
+                font-size: 14px;
+            }
+            .main{
+                font-size: 35px;
+            }
+        }
+        .listtrigger{
+            margin-top:-40px;
+            .Resize(0.65);
+        }
+    }
+
+    // Landscape phone (red mode)
+    @media (min-width: 480px){
+        .headline{
+            .flash{
+                font-size:22px;
+            }
+            .main{
+                font-size:50px;
+            }
+        }
+        .listtrigger{
+            .Resize(0.75);
+        }
+    }
+
+    // Portrait tablet to landscape tablet/small desktop (green mode)
+    @media (min-width: 768px){
+        .headline{
+            .h1{
+                font-size:50px;
+            }
+            .h2, .h3{
+                font-size:20px;
+            }
+            .special{
+                font-size:50px;
+            }
+        }
+        p{
+            margin-top: 20px;
+        }
+        .listtrigger{
+            .Resize(1.0);
+        }
+    }
+
+    // Large desktop (blue mode)
+    @media (min-width: 1200px){
+        .headline{
+            //margin-top:-20px;
+            .h1{
+                font-size:60px;
+            }
+            .h2{
+                font-size:28px;
+            }
+            .h3{
+                font-size:28px
+            }
+            .special{
+                font-size: 60px;
+            }
+        }
+        p{
+            margin-top: 20px;
+        }
+    }
+
+    // Huge desktop (grey mode)
+    // E.g. on 1080p HDTVs
+    @media (min-width: 1900px){
+        .headline{
+            margin-top:-20px;
+            .h1{
+                font-size: 80px;
+            }
+            .h2{
+                font-size: 40px;
+            }
+            .h3{
+                font-size: 40px;
+            }
+            .special{
+                font-size: 80px;
+            }
+        }
+        p{
+            margin-top: 20px;
+        }
+    }
+}
+
+/* SUPPLYCHAINSOLUTIONS - ADJUST BUBBLE IMAGES SIZE IN IE7 */
+.lt-ie8 {
+    .screen.supplychainsolutions {
+			ul.bubbles{
+				.thelist-bubble {
+					width: 245px;
+					height:190px;
+				}
+				.distribpoints-bubble {
+					width: 125px;
+					height: 125px;
+				}
+				.territories-bubble {
+					width: 125px;
+					height: 125px;
+				}
+				.files-bubble {
+					width: 158px;
+					height:158px;
+				}
+				.transcodes-bubble{ 
+					width:121px;
+					height:121px;
+				}
+				.assets-bubble{
+					width:133px;
+					height:133px;
+				}
+			}
+	}
+}
+
+/* MARKETPLACE SERVICES SCREEN STYLES */
+.screen.marketplaceservices{
+    // Width-independent styles:
+    .content{
+        background-color: transparent;  // Turn this on when styling this section is complete.
+        .headline{
+			margin-top:7%;
+            .flash{
+                &.h1{
+                    color: #52d7ff;
+                }
+                &.h2{
+                    color: white;
+		    padding-top: 10px;
+                }
+            }
+        }
+        p{
+			float: left;
+			margin-right: 50px;
+            //color: #2791b2;
+        }
+        ul{
+            color: white;
+        }
+        .listtrigger{
+            position: absolute;
+			text-align: center;
+			z-index: 951;
+			//background-image: url(../images/medialifecycle/medialifecycle_thelist_marketplace.png);
+		        background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+		        background-position: -568px -220px;
+			.Clickable();
+            &.hover{
+                //background-image: url(../images/medialifecycle/medialifecycle_thelist_marketplace_rollover.png);
+		background-position: -568px 0px;
+            }
+			width: 270px;
+			height: 220px; 
+        }
+    }
+    ul.bubbles{
+        li{
+            background-color: transparent;
+        }
+        li.text{
+            color: transparent;
+            font-size: 1px;
+        }
+        .thelist-bubble {
+            width: 265px;
+            height:202px;
+            background-color: transparent;
+            //background-image: url(../images/medialifecycle/medialifecycle_thelist_marketplace.png);
+	    background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+	    background-position: -568px -220px;
+	}
+        .metadata-bubble {
+            width: 210px;
+            height: 210px;
+            //background-image: url(../images/medialifecycle/bulletbubble_metadata.png);
+	    background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+	    background-position: -838px -468px;
+        }
+        .performance-bubble {
+            width: 200px;
+            height: 200px;
+            //background-image: url(../images/medialifecycle/bulletbubble_performance.png);
+	    background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+	    background-position: -0px -680px;
+        }
+        .ugc-bubble {
+            width: 181px;
+            height:181px;
+            //background-image: url(../images/medialifecycle/bulletbubble_ugc.png);
+	    background-image: url(../images/medialifecycle/medialifecycle_bubble_sprites.png);
+	    background-position: -200px -680px;
+        }
+  }
+
+    // Resposive styles:
+    // Portrait phone (yellow mode)
+    @media (max-width: 479px){    
+        .headline{
+            .flash{
+                font-size: 14px;
+            }
+            .main{
+                font-size: 35px;
+            }
+        }
+        .listtrigger{
+            margin-top:-40px;
+            .Resize(0.65);
+        }
+    }
+
+    // Landscape phone (red mode)
+    @media (min-width: 480px){
+        .headline{
+            .flash{
+                font-size:22px;
+            }
+            .main{
+                font-size:50px;
+            }
+        }
+        .listtrigger{
+            .Resize(0.75);
+        }
+    }
+
+    // Portrait tablet to landscape tablet/small desktop (green mode)
+    @media (min-width: 768px){
+        .headline{
+            .h1{
+                font-size:53px;
+            }
+            .h2{
+                font-size:20px;
+            }
+        }
+        p{
+            margin-top: 20px;
+        }
+        .listtrigger{
+            .Resize(1.0);
+        }
+    }
+
+    // Large desktop (blue mode)
+    @media (min-width: 1200px){
+        .headline{
+            margin-top:-20px;
+            .h1{
+                font-size:65px;
+            }
+            .h2{
+                font-size:25px;
+            }
+        }
+        p{
+            margin-top: 20px;
+        }
+    }
+
+    // Huge desktop (grey mode)
+    // E.g. on 1080p HDTVs
+    @media (min-width: 1900px){
+        .headline{
+            margin-top:-20px;
+            .h1{
+                font-size:87px;
+            }
+            .h2{
+                font-size:32px;
+            }
+        }
+        p{
+            margin-top: 20px;
+        }
+    }
+}
+
+/* MARKETPLACESERVICES - ADJUST BUBBLE IMAGES SIZE IN IE7 */
+.lt-ie8 {
+    .screen.marketplaceservices {
+			ul.bubbles{
+				.thelist-bubble {
+					width: 245px;
+					height:182px;
+				}
+				.metadata-bubble {
+					width: 190px;
+					height: 190px;
+				}
+				.performance-bubble {
+					width: 180px;
+					height: 180px;
+				}
+				.ugc-bubble {
+					width: 161px;
+					height:161px;
+				}
+			}
+	}
+}

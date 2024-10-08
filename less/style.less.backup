@@ -1,0 +1,437 @@
+@import "normalize.less";
+@import "helpers.less";
+//@import "global-mobile.less";
+@import "shared.less";
+
+/* Basic Page Elements
+ 
+   #container - the viewport on to the content
+        #grid - the entire collection of screens on the site, arranged into columns
+      .column - a column of screens that correspond to one major section in the site navigation
+      .screen - a single full-screen "page" of content on the site
+       .panel - a sub-screen view of content (0 or more panels possible per screen)
+*/
+
+/* PARALLAX BACKGROUND STYLES */
+body{
+	background: #3e99a5;
+}
+
+#background-container,
+#background-container>div,
+#background-tint{
+	position: absolute;
+	padding:0;
+	margin:0;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+}
+
+#background-container{
+	z-index:0;
+	div{
+		background-image: url(../images/background-dots.png);
+		opacity: 0.5;
+		-moz-opacity: 0.5;
+		filter:alpha(opacity=50);
+	}
+}
+
+/* VIEWPORT & GRID BASE STYLES */
+#container, #grid, #dots {
+	width:100%;
+	height:100%;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	overflow: hidden;
+}
+
+/* VIEWPORT STYLES */ 
+#container{
+	//z-index:1000;
+}
+
+a.button{
+    // general button styles
+    font-family:"Chivo";
+    text-transform: uppercase;
+    background-color: white;
+    color:#f45553;
+    padding: 5px 10px;
+    .RoundCorners(0px);
+    text-align: center;
+    display: inline-block;
+}
+a.button:hover{
+    background-color: rgba(255,255,255,0.7);
+    .NoTextEmboss;
+    color:#f45553;
+}
+
+form input{
+    border-style: none;
+    padding: 3px 5px;
+}
+
+.permanent-ui{
+    position: absolute;
+    //z-index:150;
+    margin: 0;
+    padding: 0;
+}
+
+.tooltip-base{
+    display: none;
+    position: relative;
+    z-index: 1010;
+    .Transition;
+    background:@SixtyPercentBlack;
+}
+
+.tooltip-above{
+    .tooltip-base;
+    position: absolute;
+    width:150px;
+    padding:15px;
+    margin: -80px 0px 0px -84px;
+
+    &:after{
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: url(../images/tooltip-tail-down.png);
+        width: 18px;
+        height: 8px;
+        bottom: -8px;
+        left: 80px;
+        opacity: 0.6;
+        -moz-opacity: 0.6;
+        filter:alpha(opacity=60);
+    }
+}
+
+.tooltip-right{
+    .tooltip-base;
+    position: absolute;
+    width:150px;
+    height:100px;
+    bottom:10px;
+    padding:15px;
+    margin: 0px 0px 0px 30px;
+
+    &:after{
+        display:block;
+        content: "";
+        position: absolute;
+        background-image: url(../images/tooltip-tail-left.png);
+        width: 8px;
+        height: 18px;
+        top: 33px;
+        left: -8px;
+        opacity: 0.6;
+        -moz-opacity: 0.6;
+        filter:alpha(opacity=60);
+    }
+}
+
+/* GRID STYLES */
+#grid{
+	z-index:900;
+}
+
+.column{
+    width:100%;
+    height:100%;
+    margin: 0;
+    padding: 0;
+    float: left;
+    clear: none;
+}
+        
+/* SCREEN BASE STYLES */
+.screen{
+        width:100%;
+        height:100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+        float: left;
+        clear: none;
+        z-index:901;
+}
+
+.illustrations{
+    position: absolute;
+    z-index:902;
+    /*image {
+	url: ???		
+    }*/
+}
+
+.content{
+    position: absolute;
+    //z-index:903;
+    z-index:950;
+}
+
+/* DEFAULT CONTENT STYLES FOR IE7 AND IE8 */
+.lt-ie9 .screen .content {
+    width: 950px;
+    height: 420px;
+}
+
+// Resposive resolutions:
+// Portrait phone (yellow mode)
+@media (max-width: 479px){
+    div#title{
+        display: none;
+    }
+    .screen{
+        .content{
+            width:310px;
+            min-width:310px;
+            height: 200px;
+            .headline{
+                font-size:17px;
+            }
+            p{
+                font-size: 11px;
+                bottom: auto;
+            }
+            ul{
+                font-size: 11px;
+            }
+        }
+    }
+	.screen .bubble {
+		.Resize(0.65);
+	}
+    // TODO: Navigation layout also has to change at this screen width
+}
+
+// Landscape phone (red mode)
+@media (min-width: 480px){
+    .screen .content{
+		width: 460px;
+        height: 320px;
+		background-color: red;
+
+        .headline{
+            font-size:22px;
+        }
+        p{
+            font-size: 12px;
+        }
+        ul{
+            font-size: 12px;
+        }
+	}
+	.screen .bubble {
+		.Resize(0.75);
+	}
+}
+
+// Portrait tablet to landscape tablet/small desktop (green mode)
+@media (min-width: 768px){
+	.screen .content{
+		width:748px;
+        height: 320px;
+		background-color: green;
+
+        .headline{
+            font-size:30px;
+        }
+        p{
+            font-size: 16px;
+        }
+        ul{
+            font-size: 16px;
+        }
+	}
+	.screen .bubble {
+		.Resize(0.9);
+	}
+}
+
+// Large desktop (blue mode)
+@media (min-width: 1200px){
+	.screen .content{         
+		width: 1100px;
+        height: 420px;
+		background-color: blue;
+
+        .headline{
+            font-size:55px;
+        }
+        p{
+            font-size: 20px;
+        }
+        ul{
+            font-size: 20px;
+        }
+	}
+	.screen .bubble {
+		.Resize(1);
+	}
+}
+
+// Huge desktop, e.g. 1080p HDTVs (grey mode)
+@media (min-width: 1900px){
+	.screen .content{
+		width: 1700px;
+        height: 320px;
+		background-color: gray;
+
+        .headline{
+            font-size:85px;
+        }
+        p{
+            font-size: 23px;
+        }
+        ul{
+            font-size: 23px;
+        }
+	}
+}
+
+/* DEFAULT SCREEN STYLES */
+.screen{
+    .content{
+        .headline, h1, h2{
+            font-family: Chivo, Helvetica, "Helvetica Neue", Arial, "Open Sans", sans-serif;
+            text-transform: uppercase;
+            font-weight: 400;
+            .main, .flash{
+                display: block;
+                float: left;
+                background-color: @SixtyPercentBlack;
+                margin: 0;
+                padding: 0px 15px;
+                line-height:100%;
+            }
+        }
+    }
+    p{
+        color: black;
+        .SeventyPercentOpacity();
+    }
+    ul{
+        line-height:100%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    ul.bubbles {
+        line-height:100%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        z-index: 904;
+        .bubble {
+            font-size: 100%;
+            position: absolute;
+            width: 150px;
+            padding: 10px;
+            text-align: center;
+            color: #000;
+            background-color: rgba(255,255,255,0.7);
+            .RoundCorners;
+              z-index: 905;
+        }
+    }
+}
+.modal {
+    .video-js {
+        position: relative;
+    }
+}
+/* HOME SCREEN CONTENT IE7/8 STYLE FIXES */
+.lt-ie9 {
+    .screen {
+        .content {
+	    .headline, h1, h2{
+	    	.main, .flash{
+			background-color: #000;
+			zoom: 1;
+			.SeventyPercentOpacity;
+	    	}
+	    }
+            p {
+                bottom: 40%;
+            }
+            .videotrigger {
+                bottom: 5%;
+            }
+        }
+    }
+}
+
+/* RAGGED HEADLINE IE7/IE8 CROSS-BROWSER FIX */
+.lt-ie9 .screen{
+    .content{
+        .headline{
+            .main, .flash{
+                min-width: 640px;
+            }
+        }
+    }
+}
+
+
+// General floating bubbles styles (use images as backgrounds)
+
+.screen{
+    .content{
+        ul.bubbles{
+            li{
+                background-color: transparent;
+            }
+            li.text{
+                color: transparent;
+                font-size: 1px;
+            }
+        }
+    }
+}
+
+/********************************************************************/
+/********************************************************************/
+/********************************************************************/
+/********************************************************************/
+/********************************************************************/
+/********************************************************************/
+/********************************************************************/
+/********************************************************************/
+/********************************************************************/
+
+
+
+
+
+
+
+
+
+
+// SOCIAL MENU STYLES
+@import "social-menu.less";
+
+// NAVIGATION BAR STYLES
+@import "navigation-bar.less";
+
+// Screen-specific styles for each column:
+@import "home.less";
+@import "medialifecycle.less";
+@import "seeusinaction.less";
+@import "aboutus.less";
+@import "login.less";
+
+// NMSUI STYLES
+@import "nmsui.less";
+
+// FOOTER STYLES
+@import "footer.less";

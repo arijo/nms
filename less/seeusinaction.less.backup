@@ -1,0 +1,901 @@
+/* ===== Screen-specific Styles ========================================================
+   Author: Massv Inc.
+   ========================================================================== */
+
+/* SEE US IN ACTION SCREEN STYLES */
+.screen.seeusinaction{
+    // Width-independent styles:
+    .content {
+        background-color: transparent;  // Turn this on when styling this section is complete.
+        .headline {
+            margin-top: 15%;
+            .h1 {
+                color: #ff8a00;
+                padding-top: 10px;
+            }
+            .h2 {
+                color: white;
+                padding-bottom: 10px;
+            }
+        }
+        p{
+            //color: #6b2e4c;
+        }
+		.listtrigger{
+			position: absolute;
+			width: 265px;
+			height: 220px;
+			text-align: center;
+			z-index: 951;	
+			//background-image: url(../images/seeusinaction/brands_bug.png);
+			background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+			background-position: -598px -220px;
+			.Clickable();
+			&.hover{
+				//background-image: url(../images/seeusinaction/brands_bug_rollover.png);
+				background-position: -598px 0px;
+			}
+		}
+    }
+    ul.bubbles {
+            .contentbubble01 {
+                    width: 220px;
+                    height: 220px;
+                    background-color: transparent;
+                    //background-image: url(../images/seeusinaction/seeusinaction_contentbubble01.png);
+		    background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+		    background-position: -863px -220px;
+            }
+            .contentbubble02 {
+                    width: 257px;
+                    height: 257px;
+                    background-color: transparent;
+                    //background-image: url(../images/seeusinaction/seeusinaction_contentbubble02.png);
+		    background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+		    background-position: 0px -480px;
+            }
+            .contentbubble03 {
+                    width: 220px;
+                    height: 220px;
+                    background-color: transparent;
+                    //background-image: url(../images/seeusinaction/seeusinaction_contentbubble03.png);
+		    background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+		    background-position: -863px 0px;
+            }
+    }
+
+    // Resposive styles:
+    // Portrait phone (yellow mode)
+    @media (max-width: 479px){    
+        .headline{
+            .h1{
+                font-size: 14px;
+            }
+            .h2{
+                font-size: 35px;
+            }
+        }
+        .listtrigger{
+            margin-top:-40px;
+            .Resize(0.65);
+        }
+    }
+
+    // Landscape phone (red mode)
+    @media (min-width: 480px){
+        .headline{
+            .h1{
+                font-size:22px;
+            }
+            .h2{
+                font-size:50px;
+            }
+        }
+        .listtrigger{
+            .Resize(0.75);
+        }
+    }
+
+    // Portrait tablet to landscape tablet/small desktop (green mode)
+    @media (min-width: 768px){
+        .headline{
+            .h1{
+                font-size:50px;
+            }
+            .h2{
+                font-size:30px;
+            }
+        }
+        .listtrigger{
+            .Resize(1.0);
+        }
+    }
+
+    // Large desktop (blue mode)
+    @media (min-width: 1200px){
+        .headline{
+            .h1{
+                font-size:68px;
+            }
+            .h2{
+                font-size:40px;
+            }
+        }
+    }
+
+    // Huge desktop (grey mode)
+    // E.g. on 1080p HDTVs
+    @media (min-width: 1900px){
+        .headline{
+            .h1{
+                font-size:90px;
+            }
+            .h2{
+                font-size:46px;
+            }
+        }
+    }
+}
+
+/* SEEUSINACTION - ADJUST BUBBLE IMAGES SIZE IN IE7 */
+.lt-ie8 {
+    .screen.seeusinaction {
+	    ul.bubbles {
+		    .contentbubble01 {
+			    width: 200px;
+			    height: 200px;
+		    }
+		    .contentbubble02 {
+			    width: 237px;
+			    height: 237px;
+		    }
+		    .contentbubble03 {
+			    width: 200px;
+			    height: 200px;
+		    }
+	    }
+     }
+}
+
+/* FILM AND TELEVISION SCREEN STYLES */
+.screen.filmtelevision{
+    // Width-independent styles:
+    .content{
+        background-color: transparent;  // Turn this on when styling this section is complete.
+        .headline{
+            .flash {
+                &.h1 {
+                    color: #f44a9e;
+                    padding-top: 10px;
+                }
+                &.h2 {
+                    color: white;
+                    display: block;
+                    padding-bottom: 10px;
+                    float: left;
+                }
+            }
+        }
+        p{
+            //color: white;
+        }
+    }
+    ul.bubbles {
+        li{
+            background-color: transparent;
+        }
+        li.text{
+            color: transparent;
+            font-size: 1px;
+        }
+        .formats-bubble {
+                width: 186px;
+                height: 186px;
+                //background-image: url(../images/seeusinaction/bulletbubble_formats.png);
+		background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+		background-position: -819px -737px;
+        }
+        .content-bubble {
+                width: 148px;
+                height: 148px;
+                //background-image: url(../images/seeusinaction/bulletbubble_content.png);
+		background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+		background-position: -480px -949px;
+        }
+        .monetization-bubble {
+                width: 185px;
+                height: 185px;
+                //background-image: url(../images/seeusinaction/bulletbubble_monetization.png);
+		background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+		background-position: -1083px 0px;
+        }
+    }
+
+    // Resposive styles:
+    // Portrait phone (yellow mode)
+    @media (max-width: 479px){    
+        .headline{
+            .flash{
+                font-size: 14px;
+            }
+            .main{
+                font-size: 35px;
+            }
+        }
+        ul{
+            bottom: auto;
+        }
+    }
+
+    // Landscape phone (red mode)
+    @media (min-width: 480px){
+        .headline{
+            .flash{
+                font-size:22px;
+            }
+            .main{
+                font-size:50px;
+            }
+        }
+    }
+
+    // Portrait tablet to landscape tablet/small desktop (green mode)
+    @media (min-width: 768px){
+        .headline{
+            .h1{
+                font-size:48px;
+            }
+            .h2{
+                font-size:30px;
+            }
+        }
+
+    }
+
+    // Large desktop (blue mode)
+    @media (min-width: 1200px){
+        .headline{
+            .h1{
+                font-size:58px;
+            }
+            .h2{
+                font-size:38px;
+            }
+        }
+    }
+
+    // Huge desktop (grey mode)
+    // E.g. on 1080p HDTVs
+    @media (min-width: 1900px){
+        .headline{
+            .h1{
+                font-size:82px;
+            }
+            .h2{
+                font-size:50px;
+            }
+        }
+    }
+}
+
+/* FILMTELEVISION - ADJUST BUBBLE IMAGES SIZE IN IE7 */
+.lt-ie8 {
+    .screen.filmtelevision {
+	    ul.bubbles {
+		.formats-bubble {
+			width: 166px;
+			height: 166px;
+		}
+		.content-bubble {
+			width: 128px;
+			height: 128px;
+		}
+		.monetization-bubble {
+			width: 165px;
+			height: 165px;
+		}
+	    }
+     }
+}
+
+/* MUSIC SCREEN STYLES */
+.screen.music{
+    // Width-independent styles:
+    .content{
+        background-color: transparent;  // Turn this on when styling this section is complete.
+        .headline{
+			margin-top: 10%;
+            .flash{
+                &.h1{
+                    color: #f4db53;
+                    padding-top: 10px;
+                }
+                &.h2{
+                    color: white;
+                    padding-bottom: 10px;
+                }
+            }
+        }
+        p{
+			float: right;
+			color: #000;
+        }
+    }
+    ul.bubbles{
+        li{
+            background-color: transparent;
+        }
+        li.text{
+            color: transparent;
+            font-size: 1px;
+        }
+        .ddex-bubble {
+            width: 155px;
+            height: 155px;
+            //background-image: url(../images/seeusinaction/bulletbubble_ddex.png);
+	    background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+	    background-position: -325px -949px;
+			z-index: 910;
+        }
+        .label-bubble {
+            width: 170px;
+            height: 170px;
+            //background-image: url(../images/seeusinaction/bulletbubble_label.png);
+	    background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+	    background-position: -1083px -697px;
+			z-index: 911;
+        }
+        .musicterritories-bubble {
+            width: 121px;
+            height: 121px;
+            //background-image: url(../images/seeusinaction/bulletbubble_musicterritories.png);
+	    background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+	    background-position: -771px -949px;
+        }
+        .musicdistribution-bubble {
+            width: 143px;
+            height: 143px;
+            //background-image: url(../images/seeusinaction/bulletbubble_musicdistribution.png);
+	    background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+	    background-position: -629px -949px;
+			z-index: 911;
+        }
+        .contentowners-bubble {
+            width: 171px;
+            height: 171px;
+            //background-image: url(../images/seeusinaction/bulletbubble_contentowners.png);
+	    background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+	    background-position: -1083px -356px;
+			z-index: 910;
+        }
+        .dspdistribution-bubble {
+            width: 150px;
+            height: 150px;
+            //background-image: url(../images/seeusinaction/music_contentbubble01.png);
+			z-index: 910;
+        }
+        .contentbubble01 {
+            width: 210px;
+            height: 210px;
+            background-color: transparent;
+            //background-image: url(../images/seeusinaction/music_contentbubble01.png);
+	    background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+	    background-position: -212px -737px;
+        }
+        .contentbubble02 {
+            width: 220px;
+            height: 220px;
+            background-color: transparent;
+            //background-image: url(../images/seeusinaction/music_contentbubble02.png);
+	    background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+	    background-position: -863px -440px;
+        }
+    }
+
+    // Responsive styles:
+    // Portrait phone (yellow mode)
+    @media (max-width: 479px){    
+        .headline{
+            .flash{
+                font-size: 14px;
+            }
+            .main{
+                font-size: 35px;
+            }
+        }
+        ul{
+            bottom: auto;
+        }
+    }
+
+    // Landscape phone (red mode)
+    @media (min-width: 480px){
+        .headline{
+            .flash{
+                font-size:22px;
+            }
+            .main{
+                font-size:50px;
+            }
+        }
+    }
+
+    // Portrait tablet to landscape tablet/small desktop (green mode)
+    @media (min-width: 768px){
+        .headline{
+            .h1{
+                font-size:48px;
+            }
+            .h2{
+                font-size:24px;
+            }
+        }
+    }
+
+    // Large desktop (blue mode)
+    @media (min-width: 1200px){
+        .headline{
+            .h1{
+                font-size:62px;
+            }
+            .h2{
+                font-size:34px;
+            }
+        }
+    }
+
+    // Huge desktop (grey mode)
+    // E.g. on 1080p HDTVs
+    @media (min-width: 1900px){
+        .headline{
+            .h1{
+                font-size:84px;
+            }
+            .h2{
+                font-size:46px;
+            }
+        }
+    }
+}
+
+/* MUSIC - ADJUST BUBBLE IMAGES SIZE IN IE7 */
+.lt-ie8 {
+    .screen.music {
+	    ul.bubbles{
+		.ddex-bubble {
+		    width: 135px;
+		    height: 135px;
+		}
+		.label-bubble {
+		    width: 150px;
+		    height: 150px;
+		}
+		.musicterritories-bubble {
+		    width: 101px;
+		    height: 101px;
+		}
+		.musicdistribution-bubble {
+		    width: 123px;
+		    height: 123px;
+		}
+		.contentowners-bubble {
+		    width: 151px;
+		    height: 151px;
+		}
+		.dspdistribution-bubble {
+		    width: 130px;
+		    height: 130px;
+		}
+		.contentbubble01 {
+		    width: 190px;
+		    height: 190px;
+		}
+		.contentbubble02 {
+		    width: 200px;
+		    height: 200px;
+		}
+	}
+     }
+}
+
+/* SOCIAL PLATFORMS SCREEN STYLES */
+.screen.socialplatforms{
+    // Width-independent styles:
+    .content{
+        background-color: transparent;  // Turn this on when styling this section is complete.
+        .headline{
+			margin-top: -3%;
+            text-align: right;
+            .flash {
+                float: right;
+                &.h1 {
+                    color: #fa6e63;
+                    padding-top: 10px;
+                }
+                &.h2 {
+                    color: white;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+                .special{
+                    display: block;
+                    padding-bottom: 10px;
+                }
+            }
+        }
+        p{
+			float: right;
+            text-align: right;
+			color: #000;
+        }
+    }
+    ul.bubbles{
+        li{
+            background-color: transparent;
+        }
+        li.text{
+            color: transparent;
+            font-size: 1px;
+        }
+        /*.contentbubble01 {
+            width: 155px;
+            height: 155px;
+            background-color: transparent;
+            background-image: url(../images/seeusinaction/music_contentbubble01.png);
+        }
+        .contentbubble02 {
+            width: 212px;
+            height: 212px;
+            background-color: transparent;
+            background-image: url(../images/seeusinaction/music_contentbubble02.png);
+        }
+        .bugbubble {
+            width: 279px;
+            height: 229px;
+            background-color: transparent;
+            background-image: url(../images/seeusinaction/socialplatformsbug.png);
+        }*/
+        .contentbubble01 {
+            width: 155px;
+            height: 155px;
+            background-color: transparent;
+            //background-image: url(../images/seeusinaction/socialplatforms_contentbubble01.png);
+	    background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+	    background-position: -170px -949px;
+        }
+        .contentbubble02 {
+            width: 212px;
+            height: 212px;
+            background-color: transparent;
+            //background-image: url(../images/seeusinaction/socialplatforms_contentbubble02.png);
+	    background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+	    background-position: 0px -737px;
+        }
+    }
+	.indabamusicbug {
+            position: absolute;
+	    //background-image: url(../images/seeusinaction/socialplatformsindaba.png);
+	    background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+	    background-position: -299px 0px;
+	    width: 299px;
+        height: 240px;
+	    .Clickable();
+	    &.hover {
+			//background-image: url(../images/seeusinaction/socialplatformsindaba_rollover.png);
+			background-position: 0px 0px;
+	    }
+	}
+	.videotrigger {
+		position: absolute;
+		text-align: center;
+		z-index: 950;
+		//background-image: url(../images/seeusinaction/socialplatformsbug.png);
+	        background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+	        background-position: -299px -240px;
+		.Clickable();
+        &.hover{
+            background-image: url(../images/seeusinaction/socialplatformsbug_rollover.png);
+        }
+		width: 299px;
+		height: 240px;
+	}
+
+    // Responsive styles:
+    // Portrait phone (yellow mode)
+    @media (max-width: 479px){    
+        .headline{
+            .flash{
+                font-size: 14px;
+            }
+            .main{
+                font-size: 35px;
+            }
+        }
+        ul{
+            bottom: auto;
+        }
+    }
+
+    // Landscape phone (red mode)
+    @media (min-width: 480px){
+        .headline{
+            .flash{
+                font-size:22px;
+            }
+            .main{
+                font-size:50px;
+            }
+        }
+    }
+
+    // Portrait tablet to landscape tablet/small desktop (green mode)
+    @media (min-width: 768px){
+        .headline{
+            .h1{
+                font-size:38px;
+            }
+            .special{
+                font-size:62px;
+            }
+            .h2{
+                font-size:20px;
+            }
+        }
+    }
+
+    // Large desktop (blue mode)
+    @media (min-width: 1200px){
+        .headline{
+            .h1{
+                font-size:49px;
+            }
+            .special{
+                font-size:82px;
+            }
+            .h2{
+                font-size:32px;
+            }
+        }
+    }
+
+    // Huge desktop (grey mode)
+    // E.g. on 1080p HDTVs
+    @media (min-width: 1900px){
+        .headline{
+            .h1{
+                font-size:77px;
+            }
+            .special{
+                font-size: 120px;
+            }
+            .h2{
+                font-size:50px;
+            }
+        }
+    }
+}
+
+/* SOCIALPLATFORMS - ADJUST BUBBLE IMAGES SIZE IN IE7 */
+.lt-ie8 {
+    .screen.socialplatforms {
+	    ul.bubbles{
+		.contentbubble01 {
+		    width: 135px;
+		    height: 135px;
+		}
+		.contentbubble02 {
+		    width: 192px;
+		    height: 192px;
+		}
+		.contentbubble01 {
+		    width: 135px;
+		    height: 135px;
+		}
+		.contentbubble02 {
+		    width: 192px;
+		    height: 192px;
+		}
+	    }
+	}
+}
+
+
+/* CONSUMER EXPERIENCES SCREEN STYLES */
+.screen.consumerexperiences{
+    // Width-independent styles:
+    .content{
+        background-color: transparent;  // Turn this on when styling this section is complete.
+        .headline{
+		    .topbullets {
+			margin-left: 15%;
+			margin-bottom: 2%;
+		    }
+		    .bottombullets {
+			margin-left: 15%;
+			margin-top: 24%;
+		    }
+			position: absolute;
+			left: 15%;
+			top: -20%;
+            .flash{
+                &.h1 {
+                    color: #f49653;
+                    padding-top: 10px;
+					clear:both;
+                }
+                &.h2 {
+                    color: white;
+                    padding-bottom: 10px;
+					clear:both;
+                }
+            }
+        }
+    }
+    ul.bubbles{
+        li{
+            background-color: transparent;
+        }
+        li.text{
+            color: transparent;
+            font-size: 1px;
+        }
+        /*.d2c-bubble {
+            width: 135px;
+            height: 135px;
+            background-image: url(../images/seeusinaction/bulletbubble_d2c.png);
+        }
+        .updown-bubble {
+            width: 150px;
+            height: 150px;
+            background-image: url(../images/seeusinaction/bulletbubble_updown.png);
+        }
+        .multiscreen-bubble {
+            width: 101px;
+            height: 101px;
+            background-image: url(../images/seeusinaction/bulletbubble_multiscreen.png);
+        }
+        .strategy-bubble {
+            width: 123px;
+            height: 123px;
+            background-image: url(../images/seeusinaction/bulletbubble_strategy.png);
+        }*/
+        .contentbubble01 {
+                width: 195px;
+                height: 195px;
+                background-color: transparent;
+                //background-image: url(../images/seeusinaction/consumerexperiences_contentbubble01.png);
+	        background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+	        background-position: -624px -737px;
+        }
+        .contentbubble02 {
+                width: 251px;
+                height: 251px;
+                background-color: transparent;
+                //background-image: url(../images/seeusinaction/consumerexperiences_contentbubble02.png);
+	        background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+	        background-position: -257px -480px;
+        }
+        .contentbubble03 {
+                width: 250px;
+                height: 250px;
+                background-color: transparent;
+                //background-image: url(../images/seeusinaction/consumerexperiences_contentbubble03.png);
+	        background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+	        background-position: -508px -480px;
+        }
+        .contentbubble04 {
+                width: 202px;
+                height: 202px;
+                background-color: transparent;
+                //background-image: url(../images/seeusinaction/consumerexperiences_contentbubble04.png);
+	        background-image: url(../images/seeusinaction/seeusinaction_bubble_sprites.png);
+	        background-position: -422px -737px;
+        }
+    }
+
+    // Responsive styles:
+    // Portrait phone (yellow mode)
+    @media (max-width: 479px){    
+        .headline{
+            .flash{
+                font-size: 14px;
+            }
+            .main{
+                font-size: 35px;
+            }
+        }
+        ul{
+            bottom: auto;
+        }
+    }
+
+    // Landscape phone (red mode)
+    @media (min-width: 480px){
+        .headline{
+            .flash{
+                font-size:22px;
+            }
+            .main{
+                font-size:50px;
+            }
+        }
+    }
+
+    // Portrait tablet to landscape tablet/small desktop (green mode)
+    @media (min-width: 768px){
+        .headline{
+            .h1{
+                font-size:48px;
+            }
+            .h2{
+                font-size:22px;
+            }
+        }
+    }
+
+    // Large desktop (blue mode)
+    @media (min-width: 1200px){
+        .headline{
+            .h1{
+                font-size:58px;
+            }
+            .h2{
+                font-size:28px;
+            }
+        }
+    }
+
+    // Huge desktop (grey mode)
+    // E.g. on 1080p HDTVs
+    @media (min-width: 1900px){
+        .headline{
+            .h1{
+                font-size:72px;
+            }
+            .h2{
+                font-size:40px;
+            }
+        }
+    }
+}
+
+/* CONSUMEREXPERIENCES - ADJUST BUBBLE IMAGES SIZE IN IE7 */
+.lt-ie8 {
+    .screen.consumerexperiences {
+	    ul.bubbles{
+		.d2c-bubble {
+		    width: 115px;
+		    height: 115px;
+		}
+		.updown-bubble {
+		    width: 130px;
+		    height: 130px;
+		}
+		.multiscreen-bubble {
+		    width: 81px;
+		    height: 81px;
+		}
+		.strategy-bubble {
+		    width: 113px;
+		    height: 113px;
+		}
+		.contentbubble01 {
+			width: 175px;
+			height: 175px;
+		}
+		.contentbubble02 {
+			width: 231px;
+			height: 231px;
+		}
+		.contentbubble03 {
+			width: 230px;
+			height: 230px;
+		}
+		.contentbubble04 {
+			width: 182px;
+			height: 182px;
+		}
+	    }
+	}
+}
+

@@ -1,0 +1,230 @@
+define([
+	   	'jquery',
+		'underscore',
+		'backbonejs'],
+
+		function( $, _, Backbone) {
+
+			// MENU VIEW
+			var Menu = Backbone.View.extend({
+
+				events: {
+					'click': 'click',
+					'outsideclick': 'outsideclick'
+				},
+
+				initialize: function() {
+
+					// MOVE THE TOP MENU ITEM INTO THE DROPDOWN
+					// AND USE THE CURRENT ONE AS THE HEADER
+					this._setupHeader();
+
+					this.submenuEl = this.$el.find('ul');
+					this.$el.css('overflow', 'visible');
+					this.submenuEl.removeClass('hidden');
+					this.submenuEl.hide();
+					this.open = false;
+
+					this.topMeta = this.$el.data('meta');
+					this.curMeta = null;
+
+					// MENU SUBITEMS HIDDEN BY DEFAULT
+					this.deactivate();
+
+					// LISTEN TO OUTSIDE MENU CLICKS ( SO WE KNOW WE NEED TO CLOSE THE MENU)
+					this._listenToOutsideClicks();
+				},
+
+				lock: function() {
+
+					this._locked = true;
+				},
+
+				unlock: function() {
+
+					this._locked = false;
+				},
+
+				activate: function() {
+
+					this.unlock();
+
+					this.$el.find('a:first')
+						.css({
+							width: '',
+							height: ''
+						});
+
+					this.$el.addClass('current');
+				},
+
+				deactivate: function() {
+
+					this.lock();
+
+					this.$el.removeClass('current');
+
+					//this.setHeader( this.topMeta.title);
+					this.$el.find('a:first')
+						.css({
+							width: '18px',
+							height: '18px'
+						}).text('');
+
+					this._dehighlight( this.curMeta);
+
+					this.curMeta = null;
+				},
+
+				select: function( meta, options) {
+
+					var prevMeta = this.curMeta;
+
+					this.curMeta = meta;
+					
+					if( !options || options.effects) {
+
+
+						this.open ? this.hide() : this.show();
+					}
+
+					if( this.open) {
+
+						this.setHeader( this.topMeta.title);
+
+					} else {
+
+						this.setHeader( this.curMeta.title);
+					}
+					
+					this._highlight( this.curMeta, prevMeta);
+
+					this.options.listenerEl.trigger('select', [meta, options]);
+				},
+
+				setHeader: function( text) {
+
+						var titleEl = this.$el.find('a:first'),
+						    curText = titleEl.text(),
+							newText = text;
+
+						if( newText !== curText) {
+
+							titleEl.text( newText);
+						}
+				},
+
+				outsideclick: function( ev, el) {
+
+					if( this.open) {
+						
+						this.hide();
+					}
+				},
+
+				click: function( ev, options) {
+
+					//ev.stopPropagation();
+
+					var el = $(ev.target).closest('li'),
+						isHeader = el && el.hasClass('header'),
+						meta = el.data('meta'),
+						curMeta = this.curMeta;
+
+					if( !isHeader || !curMeta) {
+
+						if( meta && meta !== curMeta) {
+
+							this.select( meta);
+						}
+
+					} else {
+						 
+						if( !this.open) this.show();
+					}
+				},
+
+				show: function() {
+
+					if( this.submenuEl.size()) {
+
+						this.open = true;
+						this.submenuEl.stop(true, true).fadeIn();
+					}
+				},
+
+				hide: function() {
+
+					if( this.submenuEl.size()) {
+
+						this.open = false;
+						this.submenuEl.stop(true, true).fadeOut();
+					}
+				},
+
+				_setupHeader: function() {
+
+					var menuEl = this.$el, 
+						meta = menuEl.data('meta'),
+						newEl = $('<li><a href="javascript:void(0);">' + meta.title + '</a></li>');
+
+					newEl.addClass('row_' + meta.row + ' col_' + meta.col);
+					newEl.data('meta', meta);
+
+					menuEl.find('ul.dropdown').prepend( newEl);
+					menuEl.addClass( 'header');
+					
+					meta.$proxyMenuEl = newEl;
+				},
+
+				_highlight: function( cur, prev) {
+
+						var curEl = cur && ( cur.$proxyMenuEl || cur.$menuEl),
+							prevEl = prev && ( prev.$proxyMenuEl || prev.$menuEl);
+
+						if( prevEl) {
+
+							prevEl.removeClass('selected');
+						}
+
+						if( curEl) {
+
+							curEl.addClass('selected');
+						}
+				},
+
+				_dehighlight: function( cur) {
+
+						var curEl = cur && ( cur.$proxyMenuEl || cur.$menuEl);
+
+						if( curEl) {
+
+							curEl.removeClass('selected');
+						}
+				},
+
+				_listenToOutsideClicks: function() {
+
+					var outsideClick = function( ev) {
+
+						var el = $( ev.target),
+						    menuMeta = this.$el.data('meta'),
+							menuSel = '.menu.row_' + menuMeta.row + '.col_' + menuMeta.col, 
+							outsideclick = !el.closest( menuSel).size();
+
+						if( outsideclick) {
+
+								this.$el.trigger('outsideclick', el);
+						}
+					}
+
+					$('#nms-app').click(
+						$.proxy( outsideClick, this)
+					);
+				}
+			});
+
+			return Menu;
+		}
+
+);

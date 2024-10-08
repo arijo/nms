@@ -1,0 +1,40 @@
+# Ignore node_modules folder
+node_modules/
+
+# Ignore swap files created by text editors like Vim
+*.swp
+
+# Ignore compiled CSS and LESS temporary files
+*.css.map
+*.less.swp
+*.less.cache
+
+# Ignore compiled JS bundles
+*.min.js
+*.bundle.js
+
+# Ignore package lock files (optional if you don’t want to track them)
+package-lock.json
+
+# Ignore scripts build directory
+scripts/build.sh
+
+# Ignore other temporary files
+.nms.js.swp
+tablet/nms/*.swp
+
+# Ignore environment variable files (if present)
+.env
+.env.local
+.env.*.local
+
+# Ignore logs and error reporting files
+*.log
+npm-debug.log*
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Visual Studio Code settings (if you're using VSCode)
+.vscode/
+

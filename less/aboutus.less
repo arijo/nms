@@ -1,0 +1,719 @@
+/* ===== Screen-specific Styles ========================================================
+   Author: Massv Inc.
+   ========================================================================== */
+
+// Columns, etc. for News & Careers:
+.news .rightcol{
+    float: right;
+    height: 100%;
+    width: 18%;
+	font-family: Chivo, Helvetica, "Helvetica Neue", Arial, "Open Sans", sans-serif;
+    .sidebar {
+	h2.archives {
+		float: none;
+	}
+	h2.recent {
+		color: #fff;
+		&:hover{
+            color: #62f9b9;
+        }
+		.Clickable();
+	}
+	.category {
+		color: #fff;
+		&:hover{
+            color: #62f9b9;
+        }
+		.Clickable();
+	}
+    }
+}
+.careers .rightcol{
+    float: right;
+    height: 100%;
+    width: 33%;
+	font-family: Chivo, Helvetica, "Helvetica Neue", Arial, "Open Sans", sans-serif;
+    .sidebar {
+	h2.archives {
+		float: none;
+	}
+	h2.recent {
+		color: #fff;
+		&:hover{
+            color: #62f9b9;
+        }
+		.Clickable();
+	}
+	.category {
+		color: #fff;
+		&:hover{
+            color: #62f9b9;
+        }
+		.Clickable();
+	}
+    }
+}
+
+.news .leftcol,{
+	float: left;
+    width: 82%;
+	.article {
+	.Clickable();
+    	margin: 10px 0;
+    	
+        .title {
+    		font-size: 16px;
+			font-weight: 600;
+    		color: #62f9b9;
+    	}
+		.source {
+			font-size: 14px;
+			color: #fff;
+		}
+		.date {
+			font-size: 14px;
+			color: #fff;
+		}
+
+	}
+}
+.careers .leftcol{
+    float: left;
+    width: 67%;
+    .article {
+	.Clickable();
+    	margin: 10px 0;
+    	
+        .title {
+    		font-size: 16px;
+    		color: #35e6e6;
+    	}
+    	.source {
+    		font-size: 16px;
+    		font-style: italic;
+    	}
+    }
+}
+
+/* NEWS & CAREERS POPUP STYLES */
+.modal .news.content .scrollable,
+.modal .careers.content .scrollable {
+	background-color: #fff;
+	padding: 120px;
+	.scrollarea {
+		width: 100%;
+		overflow: visible;
+	}
+	.title {
+    		font-size: 16px;
+			font-weight: 600;
+    		color: #35e6e6;
+		text-align: left;
+	}
+    	.source {
+    		font-size: 12px;
+			text-align: left;
+			color: #999;
+			
+			a, a:hover{
+				background: transparent;
+				.NoTextEmboss();
+				.Transition(0);
+			}
+			
+			a{
+				color: #999;
+				padding-right: 15px;
+				background: url(../images/aboutus/news_overlaylinkarrow.png) no-repeat right 7px;
+				
+				&:hover{
+	                color: #35e6e6;
+					background: url(../images/aboutus/news_overlaylinkarrow.png) no-repeat right -20px;
+	            }
+			}
+
+    	}
+	.html {
+		text-align: left;
+		font-size: 14px;
+		color: #999;
+	}
+	.date {
+		font-size: 12px;
+		text-align: left;
+	}
+	.author {
+		font-size: 12px;
+		text-align: left;
+	}
+
+    // Responsive styles:
+    // Portrait phone (yellow mode)
+    @media (max-width: 479px){    
+	padding: 0;
+    }
+
+    // Landscape phone (red mode)
+    @media (min-width: 480px){
+	padding: 20px;
+    }
+
+    // Portrait tablet to landscape tablet/small desktop (green mode)
+    @media (min-width: 768px){
+	padding: 40px;
+    }
+
+    // Large desktop (blue mode)
+    @media (min-width: 1200px){
+	padding: 120px;
+    }
+}
+
+/* ABOUT US SCREEN STYLES */
+.screen.aboutus{
+    // Width-independent styles:
+    .content{
+        background-color: transparent;  // Turn this on when styling this section is complete.
+        .headline {
+            margin-top: 180px;
+            .flash {
+                &.h1 {  
+                    color: #5381f4;       
+                }
+            }
+        }
+        h2{
+            font-family: Chivo, Helvetica, "Helvetica Neue", Arial, "Open Sans", sans-serif;
+            text-transform: uppercase;
+            font-weight: 400;
+            text-align: right;
+            float: left;
+            width:40%;
+            line-height:100%;
+        }
+        p{
+            float: right;
+            line-height: 130%;
+            strong{
+                display: block;
+                margin-top: 1em;
+            }
+            width:55%;
+            color: white;
+            .FullOpacity();
+        }
+    }
+
+    // Responsive styles:
+    // Portrait phone (yellow mode)
+    @media (max-width: 479px){    
+        .headline{
+            .h1{
+                font-size: 14px;
+            }
+        }
+        h2{
+            
+        }
+    }
+
+    // Landscape phone (red mode)
+    @media (min-width: 480px){
+        .headline{
+            .h1{
+                font-size:22px;
+            }
+        }
+        h2{
+            
+        }
+    }
+
+    // Portrait tablet to landscape tablet/small desktop (green mode)
+    @media (min-width: 768px){
+        .headline{
+            .h1{
+                font-size:60px;
+            }
+        }
+        h2{
+            font-size:20px;
+        }
+        p{
+            font-size:14px;
+        }
+    }
+
+    // Large desktop (blue mode)
+    @media (min-width: 1200px){
+        .headline{
+            .h1{
+                font-size:64px;
+            }
+        }
+        h2{
+            font-size:30px;
+        }
+        p{
+            font-size:16px;
+        }
+    }
+
+    // Huge desktop (grey mode)
+    // E.g. on 1080p HDTVs
+    @media (min-width: 1900px){
+        .headline{
+            .h1{
+                font-size:88px;
+            }
+        }
+        h2{
+            font-size:38px;
+        }
+        p{
+            font-size:19px;
+        }
+
+    }
+}
+
+.screen.news{
+    // Width-independent styles:
+    .content{
+        background-color: transparent;  // Turn this on when styling this section is complete.
+        .headline{
+            color: #6df4c3;
+        }
+        h2{
+            font-family: Chivo, Helvetica, "Helvetica Neue", Arial, "Open Sans", sans-serif;
+            text-transform: uppercase;
+            font-weight: 400;
+            float: left;
+            width:40%;
+            line-height:100%;
+        }
+        p{
+            float: right;
+            line-height: 130%;
+            strong{
+                display: block;
+                margin-top: 1em;
+            }
+            width:55%;
+        }
+
+    }
+
+    // Responsive styles:
+    // Portrait phone (yellow mode)
+    @media (max-width: 479px){    
+        .headline{
+            .h1{
+                font-size: 14px;
+            }
+        }
+        h2{
+            
+        }
+    }
+
+    // Landscape phone (red mode)
+    @media (min-width: 480px){
+        .headline{
+            .h1{
+                font-size:22px;
+            }
+        }
+        h2{
+            
+        }
+    }
+
+    // Portrait tablet to landscape tablet/small desktop (green mode)
+    @media (min-width: 768px){
+        .headline{
+            .h1{
+                font-size:60px;
+            }
+        }
+        h2{
+            font-size:20px;
+        }
+        p{
+            font-size:14px;
+        }
+    }
+
+    // Large desktop (blue mode)
+    @media (min-width: 1200px){
+        .headline{
+            .h1{
+                font-size:80px;
+            }
+        }
+        h2{
+            font-size:30px;
+        }
+        p{
+            font-size:19px;
+        }
+    }
+
+    // Huge desktop (grey mode)
+    // E.g. on 1080p HDTVs
+    @media (min-width: 1900px){
+        .headline{
+            .h1{
+                font-size:110px;
+            }
+        }
+        h2{
+            font-size:45px;
+        }
+    }
+}
+
+.screen.careers{
+    // Width-independent styles:
+    .content{
+        background-color: transparent;  // Turn this on when styling this section is complete.
+        .headline{
+            color: #d7f424;
+            .flash {
+                &.h1 {  
+                    color: #5381f4;       
+                }
+            }
+        }
+        h2{
+            font-family: Chivo, Helvetica, "Helvetica Neue", Arial, "Open Sans", sans-serif;
+            text-transform: uppercase;
+            text-align: left;
+            //float: left;
+            //width:40%;
+            line-height:100%;
+        }
+        p{
+            //float: right;
+			color: #fff;
+            line-height: 130%;
+            strong{
+                display: block;
+                margin-top: 1em;
+            }
+			text-align: left;
+            //width:55%;
+        }
+		.main-content {
+			.leftcol {
+				width: 40%;
+				.title {
+					color: #d7f424;
+				}
+			}
+			.rightcol {
+				&:hover{
+                    color: #62f9b9;
+                }
+			}
+		}
+
+        .leftcol{
+            h2{
+                color: white;
+                text-transform: uppercase;
+                padding-left: 20px;
+                background: url(../images/aboutus/career_arrow_sprites.png) no-repeat 0 2px;
+                cursor: pointer;
+
+                &:hover{
+                    color: #d7f424;
+                    background: url(../images/aboutus/career_arrow_sprites.png) no-repeat 0 -27px;
+                }
+            }
+            
+            .location.open h2{
+                color: #d7f424;
+                background: url(../images/aboutus/career_arrow_sprites.png) no-repeat 0 -87px;
+            }
+
+            .job{
+                margin-left: 20px;
+
+                h3{
+                    font-weight: bold;
+
+                    a{
+                        background-color: transparent;
+                        color: white;
+                        padding-right: 20px;
+                        background: url(../images/aboutus/career_arrow_sprites.png) no-repeat right -111px;
+                        .Transition(0);
+
+                        &:hover{
+                            color: #d7f424;
+                            background: url(../images/aboutus/career_arrow_sprites.png) no-repeat right -141px;
+                            .Transition(0);
+                            .NoTextEmboss();
+                        }
+                    }
+                }
+                .info{
+                    margin: 0 0 10px 0;
+                }
+            }
+        }
+
+        .sidebar{
+            font-family: "Open Sans", Helvetica, "Helvetica Neue", Arial, sans-serif;
+
+            h2{margin-bottom: 10px;}
+            p{margin-top: 0px;}
+        }
+    }
+
+    // Responsive styles:
+    // Portrait phone (yellow mode)
+    @media (max-width: 479px){    
+        .headline{
+            .h1{
+                font-size: 14px;
+            }
+        }
+        h2{
+            
+        }
+    }
+
+    // Landscape phone (red mode)
+    @media (min-width: 480px){
+        .headline{
+            .h1{
+                font-size:22px;
+            }
+        }
+        h2{
+            
+        }
+    }
+
+    // Portrait tablet to landscape tablet/small desktop (green mode)
+    @media (min-width: 768px){
+        .headline{
+            .h1{
+                font-size:60px;
+            }
+        }
+        
+        h2{
+            font-size:15px;
+        }
+        h3, p{
+            font-size:13px;
+        }
+        .info{
+            font-size:12px;
+        }
+    }
+
+    // Large desktop (blue mode)
+    @media (min-width: 1200px){
+        .headline{
+            .h1{
+                font-size:80px;
+            }
+        }
+        h2{
+            font-size:18px;
+        }
+        h3, p{
+            font-size:15px;
+        }
+        .info{
+            font-size:14px;
+        }
+    }
+
+    // Huge desktop (grey mode)
+    // E.g. on 1080p HDTVs
+    @media (min-width: 1900px){
+        .headline{
+            .h1{
+                font-size:110px;
+            }
+        }
+        h2{
+            font-size:22px;
+        }
+        h3, p{
+            font-size:18px;
+        }
+        .info{
+            font-size:16px;
+        }
+    }
+}
+/* SCROLLABLE IE7 FIX */
+.lt-ie8 .news, 
+.lt-ie8 .careers {
+    .content{
+	overflow: hidden;
+    }
+}
+
+.screen.contactus {
+	.overlay {
+		position: absolute;
+		z-index: 951;
+	}
+	.content {
+		background-color: transparent;
+		.pitch {
+			position: absolute;
+			right: 15%;
+			bottom: 0;
+			width: 48%;
+			.headline {
+				color: #31d6df;
+				margin-bottom: 5px;
+			}
+			p { 
+				color: #fff;
+				margin: 0;
+			}
+		}
+	}
+	.bubbles {
+		li {
+			position: absolute;
+			z-index: 952;
+			.close {
+				position: absolute;
+				right: 15px;
+				top: 30px;
+				background: url(../images/aboutus/contactus_close.png) no-repeat 0 0;
+				width: 32px;
+				height: 32px;
+				cursor: pointer;
+			}
+            .close:hover {
+                    background: url('../images/aboutus/contactus_close_rollover.png') no-repeat;
+            }
+			&.losangeles {
+				background: url(../images/aboutus/losangeles.png) no-repeat 0 0;
+				width: 325px;
+				height: 325px;
+			}
+			&.mexicocity {
+				background: url(../images/aboutus/mexico.png) no-repeat 0 0;
+				width: 302px;
+				height: 300px;
+			}	
+			&.costarica {
+				background: url(../images/aboutus/costarica.png) no-repeat 0 0;
+				width: 250px;
+				height: 250px;
+			}
+			&.brazil {
+				background: url(../images/aboutus/brazil.png) no-repeat 0 0;
+				width: 250px;
+				height: 250px;
+			}
+			&.illinois {
+				background: url(../images/aboutus/illinois.png) no-repeat 0 0;
+				width: 250px;
+				height: 250px;
+			}	
+			&.indiana {
+				background: url(../images/aboutus/indiana.png) no-repeat 0 0;
+				width: 250px;
+				height: 250px;
+			}
+			&.toronto {
+				background: url(../images/aboutus/toronto.png) no-repeat 0 0;
+				width: 250px;
+				height: 250px;
+			}	
+			&.newyork {
+				background: url(../images/aboutus/newyork.png) no-repeat 0 0;
+				width: 250px;
+				height: 250px;
+			}
+			&.london {
+				background: url(../images/aboutus/london.png) no-repeat 0 0;
+				width: 300px;
+				height: 300px;
+			}
+			&.madrid {
+				background: url(../images/aboutus/madrid.png) no-repeat 0 0;
+				width: 265px;
+				height: 265px;
+			}	
+			&.paris {
+				background: url(../images/aboutus/paris.png) no-repeat 0 0;
+				width: 325px;
+				height: 325px;
+			}
+			&.frankfurt {
+				background: url(../images/aboutus/frankfurt.png) no-repeat 0 0;
+				width: 265px;
+				height: 265px;
+			}	
+			&.salzburg {
+				background: url(../images/aboutus/salzburg.png) no-repeat 0 0;
+				width: 250px;
+				height: 250px;
+			}
+			&.czechrepublic {
+				background: url(../images/aboutus/czechrepublic.png) no-repeat 0 0;
+				width: 325px;
+				height: 325px;
+			}	
+			&.nordic {
+				background: url(../images/aboutus/nordic.png) no-repeat 0 0;
+				width: 450px;
+				height: 450px;
+			}	
+			&.moscow {
+				background: url(../images/aboutus/moscow.png) no-repeat 0 0;
+				width: 265px;
+				height: 265px;
+			}
+			&.mumbai {
+				background: url(../images/aboutus/mumbai.png) no-repeat 0 0;
+				width: 265px;
+				height: 265px;
+			}	
+			&.hongkong {
+				background: url(../images/aboutus/hongkong.png) no-repeat 0 0;
+				width: 265px;
+				height: 265px;
+			}	
+			&.shanghai {
+				background: url(../images/aboutus/shanghai.png) no-repeat 0 0;
+				width: 265px;
+				height: 265px;
+			}
+			&.tokyo {
+				background: url(../images/aboutus/tokyo.png) no-repeat 0 0;
+				width: 450px;
+				height: 450px;
+			}	
+			&.sydney {
+				background: url(../images/aboutus/sydney.png) no-repeat 0 0;
+				width: 250px;
+				height: 250px;
+			}
+			&.auckland {
+				background: url(../images/aboutus/auckland.png) no-repeat 0 0;
+				width: 265px;
+				height: 265px;
+			}	
+			&.phoenix {
+				//background: url(../images/aboutus/auckland.png) no-repeat 0 0;
+				width: 265px;
+				height: 265px;
+			}	
+		}
+	}
+}

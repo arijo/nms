@@ -1,0 +1,48 @@
+/* FOOTER STYLES */
+footer{
+    #sonybug{
+        .NoTextEmboss;
+        float: right;
+        position: absolute;
+        right: 25px;
+        bottom: 40px;
+        background: url(../images/logo-sonymakebelieve.png) no-repeat right;
+        z-index: 1015;
+        
+        img{
+            .NoTextEmboss;
+            border: none;
+        }
+        a, a:hover{
+            .NoTextEmboss;
+            padding: 0;
+            margin-right:80px;
+            border: none;
+            background: none;
+        }
+    }
+	#copyright-text{
+		//.SeventyPercentOpacity;
+        font-family: Chivo, Helvetica, "Helvetica Neue", Arial, "Open Sans", sans-serif;
+		color: white;
+		float: right;
+		position: absolute;
+		right: 25px;
+		bottom: 15px;
+		font-size: 10px;
+		text-align: right;
+		padding-top: 50px;
+        z-index: 1010;
+	}
+}
+
+// Portrait phone (yellow mode)
+@media (max-width: 479px){
+    footer{
+        #copyright-text{
+            right: 5px;
+            bottom: 5px;
+        }
+    }
+    // TODO: Navigation layout also has to change at this screen width
+}

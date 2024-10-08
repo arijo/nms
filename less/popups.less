@@ -1,0 +1,170 @@
+@import "normalize.less";
+@import "helpers.less";
+//@import "global-mobile.less";
+@import "shared.less";
+
+// Resposive resolutions:
+// Portrait phone (yellow mode)
+@media (max-width: 479px){
+    .popup{
+       font-size:13px;
+    }
+}
+
+// Landscape phone (red mode)
+@media (min-width: 480px){
+    .popup{
+    	font-size:17px;
+	}
+}
+
+@media (min-width: 640px){
+	.popup{
+    	font-size:20px;
+	}
+}
+
+// Portrait tablet to landscape tablet/small desktop (green mode)
+@media (min-width: 768px){
+	.popup{
+    	font-size:24px;
+	}
+}
+
+@media (min-width: 980px){
+	.popup{
+    	font-size:30px;
+	}
+}
+
+// Large desktop (blue mode)
+@media (min-width: 1200px){
+	.popup{         
+    	font-size:36px;
+	}
+}
+
+// Huge desktop, e.g. 1080p HDTVs (grey mode)
+@media (min-width: 1900px){
+	.popup{
+    	font-size:40px;
+	}
+}
+
+/* MEDIA LIFFE CYCLE POPUP STYLES */
+.popup.medialifecycle {
+	height: 100%;
+	margin: 0 auto;
+ 	padding-top: 2%;
+ 	padding-bottom: 1%;
+	color: #666;
+	background-color: #fff;
+	.col {
+		float: left;
+		height: 100%;
+	}
+	.col-1 {
+		width: 30%;
+		margin-left: 1%;
+		.row {
+			position: relative;
+			width: 85%;
+			height: 40%;
+			margin-top: 25%;
+			text-align: right;
+			.headline {
+				font-family: Chivo, Helvetica, "Helvetica Neue", Arial, "Open Sans", sans-serif;
+				position: absolute;
+				top: 0%;
+				width: 100%;
+				height: 35%;
+				text-align: right;
+				.part {
+					display: inline-block;
+					max-width: 320px;
+					text-transform: uppercase;
+					color:#999;
+				}
+				.part-1 {
+					font-size: 0.9em;
+					vertical-align: top;
+				}
+				.part-2 {
+					margin-top: 3px;
+					padding: 0px 7px;
+					font-size: 1.7em;
+					line-height: 0.5em;
+					color: #52d7ff;
+					font-weight: bold;
+				}
+				.part-3 {
+					font-size: 0.6em;
+					color:#999;
+				}
+			}	
+			.message {
+				position: absolute;
+				top: 50%;
+				font-size: 0.5em;
+				padding-left: 40%;
+			}
+		}
+	}
+	.col-2 {
+		font-size: 0.5em;
+		width: 30%;
+		margin-left: 10px
+	}
+	.col-3 {
+		font-size: 0.5em;
+		width: 30%;
+		margin-left: 10px;
+	}
+}
+
+/* SEE US IN ACTION BRAND POPUP STYLES */
+.popup.seeusinaction {
+	//height: 100%;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #fff;
+	img {
+		width: 85%;
+		margin: 0 0 35px 0;
+	}
+}
+
+/* PRIVACY AND TERMS STYLES */
+.privacyandterms .scrollable {
+	.scrollarea{
+		padding-left: 50px;
+
+		.content-title{
+			font-size: 16px;
+			font-weight: 600;
+			color: #35e6e6;
+			text-align: left;
+		}
+		h3{
+			font-size: 14px;
+			text-align: left;
+			color: #35e6e6;
+		}
+		p{
+			font-size: 12px;
+			text-align: left;
+			color: #999;
+		}
+		a, a:hover{
+			background: transparent;
+			.NoTextEmboss();
+			.Transition(0);
+		}
+		a{
+			color: #999;
+			&:hover{
+                color: #35e6e6;
+            }
+		}
+	}
+}
