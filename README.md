@@ -8,4 +8,4 @@ http-server
 ```
 
 ## Demo
-[Home screen](images/nms-readme-image.png)
+![Home screen](images/nms-readme-image.png)
