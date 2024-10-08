@@ -8,4 +8,4 @@ http-server
 ```
 
 ## Demo
-[Home screen](https://arijo-github-images.s3.amazonaws.com/nms-readme-image.png)
+[Home screen](images/nms-readme-image.png)
